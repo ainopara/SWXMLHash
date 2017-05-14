@@ -759,7 +759,7 @@ public class XMLElement: XMLContent {
     }
 
     /// The inner text of the element, if it exists
-    public var text: String? {
+    public var text: String {
         return children
             .map({ $0 as? TextElement })
             .flatMap({ $0 })
@@ -850,8 +850,8 @@ extension XMLElement: CustomStringConvertible {
             return xmlReturn.joined(separator: "")
         }
 
-        if text != nil {
-            return "<\(name)\(attributesString)>\(text!)</\(name)>"
+        if true {
+            return "<\(name)\(attributesString)>\(text)</\(name)>"
         } else {
             return "<\(name)\(attributesString)/>"
         }
